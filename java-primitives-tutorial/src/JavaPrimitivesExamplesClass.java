@@ -5,6 +5,8 @@ public class JavaPrimitivesExamplesClass {
     static long defaultLong;
     static float defaultFloat;
     static double defaultDouble;
+    static char defaultChar;
+    static boolean defaultBoolean;
 
     private static void byteExample() {
         byte myByte = 33;
@@ -61,6 +63,48 @@ public class JavaPrimitivesExamplesClass {
         System.out.println();
     }
 
+    private static void charExample() {
+        char myChar = 'p';
+        char piChar = 960; // hex value is 03C0 (0x03C0), so decimal value is 960
+
+        System.out.println("charExample()");
+        System.out.println("char assigned value: " + myChar);
+        System.out.println("char pi: " + piChar);
+        System.out.println("char default value: " + defaultChar);
+        System.out.println();
+    }
+
+    private static void booleanExample() {
+        boolean myBoolean = true;
+        boolean threeGreaterThanTwoBoolean = 3 > 2; // a wrong mathematical inequality will assign false to the variable
+
+        System.out.println("booleanExample()");
+        System.out.println("boolean assigned value: " + myBoolean);
+        System.out.println("boolean 3 > 2? : " + threeGreaterThanTwoBoolean);
+        System.out.println("boolean default value: " + defaultBoolean);
+        System.out.println();
+    }
+
+    private static void overflowAndUnderflowExample() {
+        byte maxByte = Byte.MAX_VALUE; // maximum value of byte
+
+        System.out.println("overflowAndUnderflowExample()");
+        System.out.println("maxByte before overflow: " + maxByte);
+
+        maxByte++; // increase its value by one, causing the variable to overflow
+
+        System.out.println("maxByte after overflow: " + maxByte);
+
+        int minInt = Integer.MIN_VALUE; // minimum value of int
+        System.out.println("minInt before underflow: " + minInt);
+
+        minInt--; // decrease its value by one, causing the variable to underflow
+
+        System.out.println("minInt after underflow: " + minInt);
+
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         convertDecimalToInteger();
 
@@ -77,6 +121,12 @@ public class JavaPrimitivesExamplesClass {
         floatExample();
 
         doubleExample();
+
+        charExample();
+
+        booleanExample();
+
+        overflowAndUnderflowExample();
     }
 
     private static void convertDecimalToInteger() {
