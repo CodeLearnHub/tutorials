@@ -1,20 +1,18 @@
-import java.io.IOException;
-
 public class JavaExceptionHandlingClassExample {
     public static void main(String[] args) {
         // Uncomment the methods you would like to be executed
 
 //        genericExceptionHandlingExample();
-
+//
 //        specificExceptionHandlingExample();
 
 //        multipleExceptionHandlingExample();
 
 //        finallyBlockExample(6, 2);
 //        finallyBlockExample(3, 0);
-
-        trueFinallyBlockExample(6, 2);
-        trueFinallyBlockExample(3, 0);
+//
+//        trueFinallyBlockExample(6, 2);
+//        trueFinallyBlockExample(3, 0);
     }
 
     private static void genericExceptionHandlingExample() {
@@ -60,8 +58,8 @@ public class JavaExceptionHandlingClassExample {
     private static void multipleExceptionHandlingExample() {
         int[] integerArray = new int[5]; // every element is 0.0
 
-        // we execute an assignment at a random index with a random number 10 times, catching any exception that happens along the way
-        for(int i = 0; i < 10; i++) {
+        // we execute an assignment at a random index with a random number 6 times, catching any exception that happens along the way
+        for(int i = 0; i < 6; i++) {
             System.out.println("Attempt " + (i + 1));
 
             int randomNumber = (int) (15 + Math.random() * 15); // numbers in [15,30]
