@@ -1,4 +1,4 @@
-public class JavaExceptionHandlingClassExample {
+public class JavaExceptionHandlingExampleClass {
     public static void main(String[] args) {
         // Uncomment the methods you would like to be executed
 
