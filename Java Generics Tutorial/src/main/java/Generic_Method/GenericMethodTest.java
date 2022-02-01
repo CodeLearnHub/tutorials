@@ -5,8 +5,8 @@ public class GenericMethodTest {
 
         GenericMethodEx ob = new GenericMethodEx();
 
-        ob.<String>coinMethod("50");
+        ob.coinMethod("50");
 
-        ob.<Integer>coinMethod(30);
+        ob.coinMethod(30);
     }
 }
