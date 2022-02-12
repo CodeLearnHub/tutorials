@@ -74,3 +74,25 @@ let multiplicationClosure = { (num1: Double, num2: Double) -> Double in
 
 let multiplicationOperationResult = applyOperation(firstOperand: 18, secondOperand: 25, operationClosure: multiplicationClosure)
 print("The multiplication result is \(multiplicationOperationResult).")
+
+print()
+
+// A trailing closure
+func printSpecialMessage(message: String, printClosure: () -> Void) {
+    print(message)
+    printClosure()
+}
+
+// Calling the function without the trailing closure syntax
+printSpecialMessage(message: "Hello there", printClosure: {
+    print("General Kenobi")
+})
+
+print()
+
+// Calling the function with a trailing closure syntax
+printSpecialMessage(message: "Hello again") {
+    print("You again....")
+}
+
+// 
