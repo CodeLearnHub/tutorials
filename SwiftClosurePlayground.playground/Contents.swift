@@ -159,8 +159,3 @@ setPrintAction(action: {
 })
 
 printAction()
-
-print()
-
-// MARK: Autoclosures
-
