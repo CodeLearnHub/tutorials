@@ -8,9 +8,9 @@ CREATE TABLE erasmus (
 INSERT INTO erasmus
  	(id, name, age, country)
 VALUES
-	(1, 'John', 25,'USA');
-        (2, 'Georgios', 30,'Greece');
-        (3, 'Jim', 27,'Spain');
+	(1, 'John', 25,'USA'),
+        (2, 'Georgios', 30,'Greece'),
+        (3, 'Jim', 27,'Spain'),
         (4, 'Odysseas', 29,'United Kingdom');
 		
 SELECT * FROM erasmus;
