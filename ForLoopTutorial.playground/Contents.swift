@@ -52,3 +52,57 @@ print("\nDoing it again:\n")
 for number in stride(from: 0, through: 30, by: 3) {
     print("Current number: \(number)")
 }
+
+print()
+
+// MARK: where clause
+let numbers = [1, 57, 44, 21, 9, 34]
+
+// example without where clause
+print("Printing numbers < 30 without \"where\" clause:")
+for number in numbers {
+    if number < 30 {
+        print(number)
+    }
+}
+
+print()
+
+// example with where clause
+print("Printing numbers < 30 with \"where\" clause:")
+for number in numbers where number < 30 {
+    print(number)
+}
+
+print()
+
+// MARK: for loop for dictionaries
+let pizzas = ["Marinara": 2, "Margherita": 3, "Capriciosa": 3.4, "Diavola": 3.6, "Quattro Formaggi": 5.5]
+
+print("Our pizza menu is:")
+for (pizza, price) in pizzas {
+    print("\(pizza) costs \(price)€")
+}
+
+print()
+
+// MARK: for loop for strings
+let longPhrase = "This is a long phrase for this example, don't you think?"
+for character in longPhrase where character.isPunctuation {
+    print(character)
+}
+
+print()
+
+// MARK: for loop for enums
+enum ColorsEnum: CaseIterable {
+    case red
+    case green
+    case purple
+    case blue
+    case yellow
+}
+
+for color in ColorsEnum.allCases {
+    print(color)
+}
