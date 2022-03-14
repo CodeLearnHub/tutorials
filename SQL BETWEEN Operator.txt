@@ -1,0 +1,37 @@
+CREATE TABLE erasms (
+ id integer,
+ name varchar(100),
+ country varchar(100),
+ age integer
+);
+INSERT INTO erasmus
+  (id, name, country,age)
+VALUES
+    (1, 'John','USA',26),
+    (2, 'Georgios','Greece',27),
+    (3, 'Jim','Spain',28),
+    (4, 'Odysseas','United Kingdom',30),
+    (5, 'Helen','Belgium',32),
+    (6, 'Constantine','Poland',34),
+    (7, 'Sia','Greece',25),
+    (8, 'Nikolaos','USA',28),
+    (9, 'Lucas','Russia',29),
+    (10,'Philip','Serbia',35);
+  
+SELECT * FROM erasmus;
+
+SELECT * FROM erasmus
+WHERE age BETWEEN 26 AND 30
+ORDER BY age;
+
+SELECT * FROM erasmus
+WHERE country BETWEEN 'Spain' AND 'USA'
+ORDER BY country;
+
+SELECT * FROM erasmus
+WHERE age NOT BETWEEN 26 AND 30
+ORDER BY age;
+
+SELECT * FROM erasmus
+WHERE age BETWEEN 26 AND 30
+AND country NOT IN ('Spain','USA');
