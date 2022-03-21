@@ -27,3 +27,9 @@ SELECT id,name,age,country
 FROM erasmus
 GROUP BY id,name,age,country
 HAVING age > 30;
+
+
+SELECT COUNT(id)As 'Counter',Country,age 
+FROM erasmus
+GROUP BY country,age
+HAVING COUNT(id) > 1;
