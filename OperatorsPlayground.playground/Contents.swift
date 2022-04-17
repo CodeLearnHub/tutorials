@@ -55,7 +55,8 @@ let divisionOfInts = 30 / 4 // 7
 let divisionOfDoubles = 30 / 4.0 // 7.5, same as 30.0 / 4 and 30.0 / 4.0
 
 // MARK: Remainder or Modulo Operator, %
-let remainderOrModulo = 30.0 % 4 // 7
+let remainderOrModulo = 30 % 4 // 7
+
 // MARK: Unary Minus Operator
 // MARK: Unary Plus Operator
 
