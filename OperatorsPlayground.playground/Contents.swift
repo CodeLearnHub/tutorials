@@ -175,7 +175,7 @@ let from5To5 = 5...5 // 5
 
 // MARK: Half-Open Range Operator, ..<
 let from6To10Excluded = 6..<10 // 6, 7, 8, 9. Same as 6...9
-let from6To6Excluded = 6..<6 // 6
+let from6To6Excluded = 6..<6 // empty range
 
 // illegal usage
 //let from6To5Excluded = 6..<5 // runtime error
