@@ -165,31 +165,4 @@ let notFalse = !notFalseOperand // true, NOT false -> true
 // Check our article here: https://codelearnhub.com/swift-optionals/#35_Nil-Coalescing_Operator/
 
 // MARK: Range Operators
-
-// MARK: Closed Range Operator, ...
-let from1To5 = 1...5 // 1, 2, 3, 4, 5
-let from5To5 = 5...5 // 5
-
-// illegal usage
-//let from6To1 = 6...1 // runtime error
-
-// MARK: Half-Open Range Operator, ..<
-let from6To10Excluded = 6..<10 // 6, 7, 8, 9. Same as 6...9
-let from6To6Excluded = 6..<6 // empty range
-
-// illegal usage
-//let from6To5Excluded = 6..<5 // runtime error
-
-// MARK: One-Sided Range Operator, ...
-let from5ToInfinity = 5... // [5, +∞)
-from5ToInfinity.contains(4) // false
-from5ToInfinity.contains(5) // true
-from5ToInfinity.contains(4354) // true
-
-let fromInfinityToThree = ...3 // (-∞, 3]
-fromInfinityToThree.contains(-45345) // true
-fromInfinityToThree.contains(3) // true
-from5ToInfinity.contains(2) //false
-
-let fromInfinityToTenExcluded = ..<10 // (-∞, 10)
-fromInfinityToTenExcluded.contains(10) // false
+// Check our article here: https://codelearnhub.com/swift-ranges
