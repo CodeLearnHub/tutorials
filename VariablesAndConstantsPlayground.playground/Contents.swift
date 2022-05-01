@@ -59,7 +59,7 @@ let aDoubleNumber: Double = 15.986  // this a Double
 let anotherDouble = 54.0            // this is also a Double
 
 // Character and String
-let letterD: Character = "C"            // this is a Character
+let letterD: Character = "D"            // this is a Character
 let aWord: String = "Let's learn Swift" // this is a String
 let letterString = "C"                  // this is also a String
 
