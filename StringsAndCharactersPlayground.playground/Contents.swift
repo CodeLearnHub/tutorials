@@ -35,13 +35,13 @@ print()
 
 let doubleQuotationMark = "Double quotation mark: \"Terremoto\" is Spanish means \"Earthquake\"."
 let nullCharacter = "Null: \0"
-let backlash = "Backlash: To escape a character, we have to preceed it with a backlash (\\)."
+let backslash = "Backslash: To escape a character, we have to preceed it with a backslash (\\)."
 let newLine = "New line: Article Title: Swift Strings and Characters \nWritten by: Dimitris Tasios"
 let tab = "Tab: Article Title: Swift Strings and Characters \n\tWritten by: Dimitris Tasios"
 
 print(doubleQuotationMark)
 print(nullCharacter)
-print(backlash)
+print(backslash)
 print(newLine)
 print(tab)
 
