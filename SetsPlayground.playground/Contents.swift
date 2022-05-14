@@ -139,3 +139,30 @@ europeanLanguages.removeAll()
 print("\nEuropean language Set after removing all elements: \(europeanLanguages)\nIs it empty: \(europeanLanguages.isEmpty)")
 
 print()
+
+// MARK: contains()
+europeanLanguages = ["English", "Spanish", "Italian", "Greek"] // resetting Set
+
+print("European languages Set contains \"Italian\": \(europeanLanguages.contains("Italian"))")
+print("European languages Set contains \"German\": \(europeanLanguages.contains("German"))")
+
+print()
+
+// MARK: - Mutability of Sets
+//let constantSet: Set = [1, 4, 3]
+//constantSet.insert(2) // Cannot use mutating member on immutable value: 'constantSet' is a 'let' constant
+//constantSet.remove(1) // Cannot use mutating member on immutable value: 'constantSet' is a 'let' constant
+
+// MARK: - For loops with Sets
+let numbersSet: Set = [-4, 3, 10, 6, 2, 22, -100]
+for number in numbersSet {
+    print(number)
+}
+
+print()
+
+let numbersArray = Array(numbersSet) // for a sorted array use numberSet.sorted()
+for number in numbersArray {
+    print(number)
+}
+
