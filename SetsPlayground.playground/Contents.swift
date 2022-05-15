@@ -166,3 +166,77 @@ for number in numbersArray {
     print(number)
 }
 
+print()
+
+// MARK: - Operations between two Sets
+let oddNumbersSet: Set = [1, 3, 5, 7, 9]            // odd numbers
+let sequentialNumbersSet: Set = [1, 2, 3, 4, 5]     // sequential numbers
+
+// MARK: Intersection
+let intersectionSet = oddNumbersSet.intersection(sequentialNumbersSet)           // 1, 3, 5 (in any order)
+let oppositeIntersectionSet = sequentialNumbersSet.intersection(oddNumbersSet)   // 1, 3, 5 (in any order)
+
+// MARK: Symmetric difference
+let symmetricDifferenceSet = oddNumbersSet.symmetricDifference(sequentialNumbersSet)            // 2, 4, 7, 9 (in any order)
+let oppositeSymmetricDifferenceSet = sequentialNumbersSet.symmetricDifference(oddNumbersSet)   // 2, 4, 7, 9 (in any order)
+
+// MARK: Union
+let unionSet = oddNumbersSet.union(sequentialNumbersSet)            // 1, 2, 3, 4, 5, 7, 9 (in any order)
+let oppositeUnionSet = sequentialNumbersSet.union(oddNumbersSet)    // 1, 2, 3, 4, 5, 7, 9 (in any order)
+
+// MARK: Subtraction
+let commonNumbersSet = oddNumbersSet.intersection(sequentialNumbersSet)                     // 1, 3, 5
+let subtractingOddSetFromSequentialSet = sequentialNumbersSet.subtracting(oddNumbersSet)    // 2, 4 (in any order)
+let subtractingSequentialSetFromOddSet = oddNumbersSet.subtracting(sequentialNumbersSet)    // 7, 9 (in any order)
+
+// MARK: - Comparing two Sets
+
+// MARK: The "==" operator
+let numbersSetA: Set = [-1, 44, 10]
+let numbersSetB: Set = [10, -1, 44]
+
+let areSetsEqual = (numbersSetA == numbersSetB)         // true, order doesn't matter
+let hasSymmetricProperty = (numbersSetB == numbersSetA) // true, symmetric property exists
+let hasReflexiveProperty = (numbersSetA == numbersSetA) // true, a Set is equal to itself, known as the "reflexive" property
+
+// MARK: isSubset(of:) and isSuperset(of:)
+let setA: Set = [1, 2, 3, 4, 5]
+let setB: Set = [1, 2, 3 ,4 ,5, 6]
+let setC: Set = [1, 2, 3 ,4 ,5, 6]
+
+let aSubseta = setA.isSubset(of: setA)      // true
+let aSubsetB = setA.isSubset(of: setB)      // true
+let bSubsetA = setB.isSubset(of: setA)      // false
+
+let bSupersetB = setB.isSuperset(of: setB)  // true
+let bSupersetA = setB.isSuperset(of: setA)  // true
+let aSupersetB = setA.isSuperset(of: setB)  // false
+
+let cSubsetB = setC.isSubset(of: setB)      // true
+let cSupersetB = setC.isSuperset(of: setB)  // true
+let bSubsetC = setB.isSubset(of: setC)      // true
+let bSupersetC = setB.isSuperset(of: setC)  // true
+
+// MARK: isStrictSubset(of:) and isStrictSuperset(of:)
+let aStrictSubseta = setA.isStrictSubset(of: setA)      // false
+let aStrictSubsetB = setA.isStrictSubset(of: setB)      // true
+let bStrictSubsetA = setB.isStrictSubset(of: setA)      // false
+
+let bStrictSupersetB = setB.isStrictSuperset(of: setB)  // false
+let bStrictSupersetA = setB.isStrictSuperset(of: setA)  // true
+let aStrictSupersetB = setA.isStrictSuperset(of: setB)  // false
+
+let cStrictSubsetB = setC.isStrictSubset(of: setB)      // false
+let cStrictSupersetB = setC.isStrictSuperset(of: setB)  // false
+let bStrictSubsetC = setB.isStrictSubset(of: setC)      // false
+let bStrictSupersetC = setB.isStrictSuperset(of: setC)  // false
+
+// MARK: isDisjoint(with:)
+let negativeNumbersSet: Set = [-3, -2, -1]
+let positiveNumbersSet: Set = [1, 2, 3]
+
+let positiveDisjointPositive = positiveNumbersSet.isDisjoint(with: positiveNumbersSet) // false
+let positiveDisjointNegative = positiveNumbersSet.isDisjoint(with: negativeNumbersSet) // true
+let negativeDisjointPositive = negativeNumbersSet.isDisjoint(with: positiveNumbersSet) // true
+let negativeDisjointNegative = negativeNumbersSet.isDisjoint(with: negativeNumbersSet) // false
+
