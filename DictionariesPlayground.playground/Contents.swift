@@ -76,3 +76,65 @@ print("Old value for German: \(nilValueForGerman)")
 print()
 
 // MARK: Removing items
+greenDictionary = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"] // reset
+
+print(greenDictionary)
+
+greenDictionary["Turkish"] = nil                                                        // Turkish is removed
+let spanishRemoved = greenDictionary.removeValue(forKey: "Spanish") ?? "nil value"      // Verde
+
+// Removing items that don't exist
+greenDictionary["Portuguese"] = nil                                                     // removing an item that doesn't exist does nothing
+let romanianRemoved = greenDictionary.removeValue(forKey: "Romanian") ?? "nil value"    // returns nil since that key didn't exist
+
+print(greenDictionary)
+print(spanishRemoved)
+print(romanianRemoved)
+
+print()
+
+// MARK: - Mutability of Dictionaries
+let constantDictionary = [1: 1.0, 2:2.0, 3:3.0]
+
+//constantDictionary[4] = 4.0 // insertion not allowed
+//constantDictionary[2] = nil // removal not allowed
+//constantDictionary[1] = 1.1 // modification not allowed
+
+// MARK: - Iterating through Dictionaries
+greenDictionary = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"] // reset
+
+// Tuple
+for (language, green) in greenDictionary {
+    print("In \(language), \"Green\" is called \(green).")
+}
+
+print()
+
+// "keys" property
+print("The keys of \"greenDictionary\":")
+for language in greenDictionary.keys {
+    print(language)
+}
+
+print()
+
+// "values" property
+print("The values of \"greenDictionary\":")
+for green in greenDictionary.values {
+    print(green)
+}
+
+print()
+
+// Sorted
+print("The keys of \"greenDictionary\" sorted:")
+for language in greenDictionary.keys.sorted() {
+    print(language)
+}
+
+print()
+
+print("The values of \"greenDictionary\" sorted:")
+for green in greenDictionary.values.sorted() {
+    print(green)
+}
