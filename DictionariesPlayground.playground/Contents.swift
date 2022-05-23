@@ -11,8 +11,16 @@ print(anotherEmptyDictionary.isEmpty)
 print()
 
 // MARK: Creating a non-empty Set
-var greenDictionary1: [String: String] = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"]   // no type inference
-var greenDictionary2 = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"]                     // type inference
+var greenDictionary1: [String: String] = ["English": "Green",
+                                          "Spanish": "Verde",
+                                          "Greek": "Πράσινο",
+                                          "Italian": "Verde",
+                                          "Turkish": "Yeşil"]   // no type inference
+var greenDictionary2 = ["English": "Green",
+                        "Spanish": "Verde",
+                        "Greek": "Πράσινο",
+                        "Italian": "Verde",
+                        "Turkish": "Yeşil"]                     // type inference
 
 print(greenDictionary1)
 print(greenDictionary2)
@@ -27,7 +35,15 @@ print()
 //var doublicateDictionaryKeys: [Int: String] = [1: "one", 2: "two", 1: "One"] // run-time error
 
 // MARK: - Operations and methods of Swift Dictionaries
-var greenDictionary = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"]
+private func getGreenDictionary() -> [String: String] {
+    return ["English": "Green",
+            "Spanish": "Verde",
+            "Greek": "Πράσινο",
+            "Italian": "Verde",
+            "Turkish": "Yeşil"]
+}
+
+var greenDictionary = getGreenDictionary()
 var noWordsDictionary = [String: String]()
 
 // MARK: The "count" property
@@ -54,7 +70,7 @@ print("English word for \"Green\" after the change: \(greenDictionary["English"]
 print()
 
 // Using updateValue function
-greenDictionary = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"] // reset
+greenDictionary = getGreenDictionary() // reset
 
 print("English word for \"Green\" before the change: \(greenDictionary["English"] ?? "")")
 let oldEnglishValue = greenDictionary.updateValue("GREEN", forKey: "English")
@@ -63,7 +79,7 @@ print("English word for \"Green\" after the change: \(greenDictionary["English"]
 print()
 
 // MARK: Inserting items
-greenDictionary = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"] // reset
+greenDictionary = getGreenDictionary() // reset
 
 print(greenDictionary)
 
@@ -76,7 +92,7 @@ print("Old value for German: \(nilValueForGerman)")
 print()
 
 // MARK: Removing items
-greenDictionary = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"] // reset
+greenDictionary = getGreenDictionary() // reset
 
 print(greenDictionary)
 
@@ -101,7 +117,7 @@ let constantDictionary = [1: 1.0, 2:2.0, 3:3.0]
 //constantDictionary[1] = 1.1 // modification not allowed
 
 // MARK: - Iterating through Dictionaries
-greenDictionary = ["English": "Green", "Spanish": "Verde", "Greek": "Πράσινο", "Italian": "Verde", "Turkish": "Yeşil"] // reset
+greenDictionary = getGreenDictionary() // reset
 
 // Tuple
 for (language, green) in greenDictionary {
