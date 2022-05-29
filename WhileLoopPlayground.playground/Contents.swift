@@ -30,6 +30,8 @@ repeat {
 print()
 
 // MARK: - Interrupting while loops
+
+// MARK: The "break" keyword
 func breakWhileLoop() {
     print("breakWhileLoop:")
     
@@ -48,6 +50,11 @@ func breakWhileLoop() {
     print("outside loop")
 }
 
+breakWhileLoop()
+
+print()
+
+// MARK: The "continue" keyword
 func continueWhileLoop() {
     print("continueWhileLoop:")
     
@@ -66,6 +73,11 @@ func continueWhileLoop() {
     print("outside loop")
 }
 
+continueWhileLoop()
+
+print()
+
+// MARK: The "return" keyword
 func returnWhileLoop() {
     print("returnWhileLoop:")
     
@@ -84,10 +96,6 @@ func returnWhileLoop() {
     print("outside loop")
 }
 
-breakWhileLoop()
-print()
-continueWhileLoop()
-print()
 returnWhileLoop()
 
 print()
