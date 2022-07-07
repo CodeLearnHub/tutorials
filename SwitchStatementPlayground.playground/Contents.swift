@@ -33,6 +33,8 @@
         }
     }
 
+    print("\nSection 1.2: sayColorsInSeychellesFlag function\n")
+
     sayColorInSeychellesFlag(forStripe: 1)
     sayColorInSeychellesFlag(forStripe: 4)
     sayColorInSeychellesFlag(forStripe: 0)
@@ -41,12 +43,46 @@
 
 // MARK: - 2. Characteristics of Swift's switch Statements
 
+    // MARK: 2.1 A Switch Statement Must Be Exhaustive and Have Non-Empty Cases
 
-    // MARK: 2.1 A Switch Statement Is Exhaustive
-
+    
 
     // MARK: 2.2 A Switch Statement Will Only Execute a Single Case by Default
+    print("\nSection 2.2: sayColorsInSeychellesFlag function\n")
 
+    private func sayColorsInSeychellesFlag(fromStripe stripe: Int) {
+        switch stripe {
+        case 1:
+            print("The first stripe in the flag of Seychelles 🇸🇨 is Blue 🔵")
+            fallthrough
+        case 2:
+            print("The second stripe in the flag of Seychelles 🇸🇨 is Yellow 🟡")
+            fallthrough
+        case 3:
+            print("The third stripe in the flag of Seychelles 🇸🇨 is Red 🔴")
+            fallthrough
+        case 4:
+            print("The fourth stripe in the flag of Seychelles 🇸🇨 is White ⚪️")
+            fallthrough
+        case 5:
+            print("The fifth stripe in the flag of Seychelles 🇸🇨 is Green 🟢")
+            fallthrough
+        default:
+            print("The number \"\(stripe)\" is invalid, sorry!")
+        }
+    }
+
+    sayColorsInSeychellesFlag(fromStripe: 1)
+    print()
+    sayColorsInSeychellesFlag(fromStripe: 4)
+    print()
+    sayColorsInSeychellesFlag(fromStripe: 0)
+    print()
+    sayColorsInSeychellesFlag(fromStripe: -10)
+    print()
+    sayColorsInSeychellesFlag(fromStripe: 8)
+
+    print()
 
     // MARK: 2.3 Match Multiple Values in a Range
 
