@@ -202,7 +202,7 @@ markHeading2(sectionNumber: "2")
     explainLogicalOrOperation(logicalTuple: (false, true))
     explainLogicalOrOperation(logicalTuple: (false, false))
 
-    print("Simplified version")
+    print("\nSimplified version:\n")
 
     private func explainLogicalOrOperationSimplified(logicalTuple: (Bool, Bool)) {
         switch logicalTuple { // no default case required, since we cover all of the cases
@@ -222,6 +222,26 @@ markHeading2(sectionNumber: "2")
 
     // MARK: 2.5 Using Value Bindings to use Variables or Constants Inside the Case
     markHeading3(subsectionNumber: "2.5")
+
+    private func explainLogicalOrOperationValueBind(logicalTuple: (Bool, Bool)) {
+        switch logicalTuple { // no default case required, since we cover all of the cases
+        case (let firstOperand, true): // true-true and false-true
+            print("First case: \(firstOperand) OR true IS true")
+        case (false, let secondOperand): // false-true and false-false
+            if secondOperand { // false-true, never executed since it's handled by above case
+                print("Second case A: false OR true IS true")
+            } else { // false-false
+                print("Second case B: false OR false IS true")
+            }
+        case (let firstOperand, let secondOperand): // any other combination, but most importantly the missing true-false
+            print("Third case: \(firstOperand) OR \(secondOperand) IS \(firstOperand || secondOperand)")
+        }
+    }
+
+    explainLogicalOrOperationValueBind(logicalTuple: (true, true))
+    explainLogicalOrOperationValueBind(logicalTuple: (true, false))
+    explainLogicalOrOperationValueBind(logicalTuple: (false, true))
+    explainLogicalOrOperationValueBind(logicalTuple: (false, false))
 
 
     // MARK: 2.6 Using a Where Clause to Check for Additional Criteria
