@@ -159,10 +159,66 @@ markHeading2(sectionNumber: "2")
     // MARK: 2.3 Match Multiple Values in a Range
     markHeading3(subsectionNumber: "2.3")
 
+    private func monthNumberToSeason(monthNumber: Int) {
+        switch monthNumber {
+        case 1...2: // values 1, 2
+            print("Winter ☃️")
+        case 3...5: // values 3, 4, 5
+            print("Spring 🌺")
+        case 6...8: // values 6, 7, 8
+            print("Summer ⛱")
+        case 9...11: // values 9, 10, 11
+            print("Autumn 🍁")
+        case 12: // 12
+            print("Winter ☃️")
+        default: // invalid value; do nothing
+            break
+        }
+    }
+
+    monthNumberToSeason(monthNumber: 1)
+    monthNumberToSeason(monthNumber: 13) // will not print/do anything
+    monthNumberToSeason(monthNumber: 4)
+    monthNumberToSeason(monthNumber: 5)
 
     // MARK: 2.4 Switching on Tuples to Check for Each of Their Elements
     markHeading3(subsectionNumber: "2.4")
 
+    private func explainLogicalOrOperation(logicalTuple: (Bool, Bool)) {
+        switch logicalTuple { // no default case required, since we cover all of the cases
+        case (true, true):
+            print("true OR true IS true")
+        case (true, false):
+            print("true OR false IS true")
+        case (false, true):
+            print("false OR true IS true")
+        case (false, false):
+            print("false OR false IS false")
+        }
+    }
+
+    explainLogicalOrOperation(logicalTuple: (true, true))
+    explainLogicalOrOperation(logicalTuple: (true, false))
+    explainLogicalOrOperation(logicalTuple: (false, true))
+    explainLogicalOrOperation(logicalTuple: (false, false))
+
+    print("Simplified version")
+
+    private func explainLogicalOrOperationSimplified(logicalTuple: (Bool, Bool)) {
+        switch logicalTuple { // no default case required, since we cover all of the cases
+        case (_, true):
+            print("true OR true IS true")
+        case (true, _):
+            print("true OR false IS true")
+        case (false, false):
+            print("false OR false IS false")
+        }
+    }
+
+    explainLogicalOrOperationSimplified(logicalTuple: (true, true))
+    explainLogicalOrOperationSimplified(logicalTuple: (true, false))
+    explainLogicalOrOperationSimplified(logicalTuple: (false, true))
+    explainLogicalOrOperationSimplified(logicalTuple: (false, false))
 
     // MARK: 2.5 Using Value Bindings to use Variables or Constants Inside the Case
     markHeading3(subsectionNumber: "2.5")
