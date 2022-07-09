@@ -243,14 +243,44 @@ markHeading2(sectionNumber: "2")
     explainLogicalOrOperationValueBind(logicalTuple: (false, true))
     explainLogicalOrOperationValueBind(logicalTuple: (false, false))
 
-
     // MARK: 2.6 Using a Where Clause to Check for Additional Criteria
     markHeading3(subsectionNumber: "2.6")
 
+    private func explainLogicalXorOperationWhereClause(logicalTuple: (Bool, Bool)) {
+        switch logicalTuple {
+        case (let firstOperand, let secondOperand) where firstOperand == secondOperand: // true-true and false-false
+            print("\(firstOperand) XOR \(secondOperand) IS false")
+        case (let firstOperand, let secondOperand) where firstOperand != secondOperand: // false-true and true-false
+            print("\(firstOperand) XOR \(secondOperand) IS true")
+        default:
+            break
+        }
+    }
+
+    explainLogicalXorOperationWhereClause(logicalTuple: (true, true))
+    explainLogicalXorOperationWhereClause(logicalTuple: (true, false))
+    explainLogicalXorOperationWhereClause(logicalTuple: (false, true))
+    explainLogicalXorOperationWhereClause(logicalTuple: (false, false))
 
     // MARK: 2.7 Combining Multiple Cases at Once With Compound Cases
     markHeading3(subsectionNumber: "2.7")
 
+    private func isGreekLetterConsonantOrVowel(letter: Character) {
+        switch letter {
+        case "α", "ε", "η", "ι", "ο", "υ", "ω":
+            print("\(letter) is a vowel")
+        case "β", "γ", "δ", "ζ", "θ", "κ", "λ", "μ", "ν", "ξ", "π", "ρ", "σ", "τ", "φ", "χ", "ψ":
+            print("\(letter) is a consant")
+        default:
+            print("Only lowercase Greek letters are accepted")
+        }
+    }
+
+    isGreekLetterConsonantOrVowel(letter: "α")
+    isGreekLetterConsonantOrVowel(letter: "υ")
+    isGreekLetterConsonantOrVowel(letter: "δ")
+    isGreekLetterConsonantOrVowel(letter: "ξ")
+    isGreekLetterConsonantOrVowel(letter: "G")
 
 // MARK: - 3. Comparing With if Statements
 
