@@ -283,9 +283,42 @@ markHeading2(sectionNumber: "2")
     isGreekLetterConsonantOrVowel(letter: "G")
 
 // MARK: - 3. Comparing With if Statements
+markHeading2(sectionNumber: "1")
 
+private enum ChocolateLanguages {
+    case english
+    case greek
+    case spanish
+//    case italian // Uncomment this line to see the true benefit of the switch-enum combination
+}
 
     // MARK: 3.1 Using an if Statement
+    markHeading3(subsectionNumber: "3.1")
 
+    private func sayChocolateWithIfStatement(inLanguage language: ChocolateLanguages) {
+        if language == .english {
+            print("If Statement: \"Chocolate\" in English is \"Chocolate\"")
+        } else if language == .greek {
+            print("If Statement: \"Chocolate\" in Greek is \"Σοκολάτα\"")
+        } else if language == .spanish {
+            print("If Statement: \"Chocolate\" in Spanish is \"Chocolate\"")
+        }
+    }
+
+    sayChocolateWithIfStatement(inLanguage: .greek)
 
     // MARK: 3.2 Using a switch Statement
+    markHeading3(subsectionNumber: "3.2")
+
+    private func sayChocolateWithSwitchStatement(inLanguage language: ChocolateLanguages) {
+        switch language {
+        case .english:
+            print("Switch Statement: \"Chocolate\" in English is \"Chocolate\"")
+        case .greek:
+            print("Switch Statement: \"Chocolate\" in Greek is \"Σοκολάτα\"")
+        case .spanish:
+            print("Switch Statement: \"Chocolate\" in Spanish is \"Chocolate\"")
+        }
+    }
+
+    sayChocolateWithSwitchStatement(inLanguage: .spanish)
