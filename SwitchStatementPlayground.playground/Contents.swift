@@ -1,20 +1,7 @@
 // MARK: Swift switch Statement
 
-// MARK: Helper functions
-private func markHeading2(sectionNumber: String) {
-    print("\n------------------------Section \(sectionNumber)------------------------\n")
-}
-
-private func markHeading3(subsectionNumber: String) {
-    print("\n------------Subection \(subsectionNumber)------------\n")
-}
-
-private func markHeading4(subsectionNumber: String) {
-    print("\n------Subection \(subsectionNumber)------\n")
-}
-
 // MARK: - 1. What Is a switch Statement in Swift?
-markHeading2(sectionNumber: "1")
+markHeading2(title: "\(HeadingWordings.section) 1")
     // MARK: 1.1 Introduction and Syntax
         //         switch your_value {
         //           case possible_value_1:
@@ -29,7 +16,7 @@ markHeading2(sectionNumber: "1")
         //         }
 
     // MARK: 1.2 A Simple Example
-    markHeading3(subsectionNumber: "1.2")
+    markHeading3(title: "\(HeadingWordings.subsection) 1.2")
 
     private func sayColorInSeychellesFlag(forStripe stripe: Int) {
         switch stripe {
@@ -55,10 +42,10 @@ markHeading2(sectionNumber: "1")
     sayColorInSeychellesFlag(forStripe: 8)
 
 // MARK: - 2. Characteristics of Swift's switch Statements
-markHeading2(sectionNumber: "2")
+markHeading2(title: "\(HeadingWordings.section) 2")
 
     // MARK: 2.1 A Switch Statement Must Be Exhaustive and Have Non-Empty Cases
-    markHeading3(subsectionNumber: "2.1")
+    markHeading3(title: "\(HeadingWordings.subsection) 2.1")
 
         // MARK: 2.1.1 Not Exhaustive Example
         //     Uncomment the follwing function to see its compile-time error
@@ -90,7 +77,7 @@ markHeading2(sectionNumber: "2")
         //    }
 
         // MARK: 2.1.3 Using the break Keyword
-        markHeading4(subsectionNumber: "2.1.3")
+        markHeading4(title: "\(HeadingWordings.subsection) 2.1.3")
 
         private func whatDoesHeLike(author: String) {
             switch author {
@@ -120,7 +107,7 @@ markHeading2(sectionNumber: "2")
         whatDoesHeLike(author: "")
 
     // MARK: 2.2 A Switch Statement Will Only Execute a Single Case by Default
-    markHeading3(subsectionNumber: "2.2")
+    markHeading3(title: "\(HeadingWordings.subsection) 2.2")
 
     private func sayColorsInSeychellesFlag(fromStripe stripe: Int) {
         switch stripe {
@@ -157,7 +144,7 @@ markHeading2(sectionNumber: "2")
     print()
 
     // MARK: 2.3 Match Multiple Values in a Range
-    markHeading3(subsectionNumber: "2.3")
+    markHeading3(title: "\(HeadingWordings.subsection) 2.3")
 
     private func monthNumberToSeason(monthNumber: Int) {
         switch monthNumber {
@@ -182,7 +169,7 @@ markHeading2(sectionNumber: "2")
     monthNumberToSeason(monthNumber: 5)
 
     // MARK: 2.4 Switching on Tuples to Check for Each of Their Elements
-    markHeading3(subsectionNumber: "2.4")
+    markHeading3(title: "\(HeadingWordings.subsection) 2.4")
 
     private func explainLogicalOrOperation(logicalTuple: (Bool, Bool)) {
         switch logicalTuple { // no default case required, since we cover all of the cases
@@ -221,7 +208,7 @@ markHeading2(sectionNumber: "2")
     explainLogicalOrOperationSimplified(logicalTuple: (false, false))
 
     // MARK: 2.5 Using Value Bindings to use Variables or Constants Inside the Case
-    markHeading3(subsectionNumber: "2.5")
+    markHeading3(title: "\(HeadingWordings.subsection) 2.5")
 
     private func explainLogicalOrOperationValueBind(logicalTuple: (Bool, Bool)) {
         switch logicalTuple { // no default case required, since we cover all of the cases
@@ -244,7 +231,7 @@ markHeading2(sectionNumber: "2")
     explainLogicalOrOperationValueBind(logicalTuple: (false, false))
 
     // MARK: 2.6 Using a Where Clause to Check for Additional Criteria
-    markHeading3(subsectionNumber: "2.6")
+    markHeading3(title: "\(HeadingWordings.subsection) 2.6")
 
     private func explainLogicalXorOperationWhereClause(logicalTuple: (Bool, Bool)) {
         switch logicalTuple {
@@ -263,7 +250,7 @@ markHeading2(sectionNumber: "2")
     explainLogicalXorOperationWhereClause(logicalTuple: (false, false))
 
     // MARK: 2.7 Combining Multiple Cases at Once With Compound Cases
-    markHeading3(subsectionNumber: "2.7")
+    markHeading3(title: "\(HeadingWordings.subsection) 2.7")
 
     private func isGreekLetterConsonantOrVowel(letter: Character) {
         switch letter {
@@ -283,7 +270,7 @@ markHeading2(sectionNumber: "2")
     isGreekLetterConsonantOrVowel(letter: "G")
 
 // MARK: - 3. Comparing With if Statements
-markHeading2(sectionNumber: "1")
+markHeading2(title: "\(HeadingWordings.section) 3")
 
 private enum ChocolateLanguages {
     case english
@@ -293,7 +280,7 @@ private enum ChocolateLanguages {
 }
 
     // MARK: 3.1 Using an if Statement
-    markHeading3(subsectionNumber: "3.1")
+    markHeading3(title: "\(HeadingWordings.subsection) 3.1")
 
     private func sayChocolateWithIfStatement(inLanguage language: ChocolateLanguages) {
         if language == .english {
@@ -308,7 +295,7 @@ private enum ChocolateLanguages {
     sayChocolateWithIfStatement(inLanguage: .greek)
 
     // MARK: 3.2 Using a switch Statement
-    markHeading3(subsectionNumber: "3.2")
+    markHeading3(title: "\(HeadingWordings.subsection) 3.2")
 
     private func sayChocolateWithSwitchStatement(inLanguage language: ChocolateLanguages) {
         switch language {
