@@ -5,6 +5,31 @@
     // MARK: 2.1 The break Keyword
     markHeading3(title: "\(HeadingWordings.section) 2.1")
 
+        // MARK: 2.1.1 Using break inside a loop
+        markHeading4(title: "\(HeadingWordings.section) 2.1.1")
+
+        private func countRepetitionsToGenerate(number: Int) {
+            var repetitions = 0
+            let acceptableRange = -100...100
+            
+            if acceptableRange.contains(number) {
+                while true {
+                    repetitions += 1
+                    let randomNumber = Int.random(in: acceptableRange)
+                    if randomNumber == number {
+                        break
+                    }
+                }
+                
+                print("It took \(repetitions) repetitions to generate the number \"\(number)\".")
+            }
+        }
+
+        countRepetitionsToGenerate(number: 4)
+
+        // MARK: 2.1.2 Using break inside a switch statement
+        markHeading4(title: "\(HeadingWordings.section) 2.1.2")
+
     // MARK: 2.2 The continue Keyword
     markHeading3(title: "\(HeadingWordings.section) 2.2")
 
