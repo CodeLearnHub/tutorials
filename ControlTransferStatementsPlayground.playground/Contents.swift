@@ -106,33 +106,99 @@ import Foundation
     // MARK: 2.3 The return Keyword
     markHeading3(title: "\(HeadingWordings.section) 2.3")
 
-private func talkLikeSpongebob(phrase: String) {
-    if phrase.isEmpty {
-        return // exit the function if we have nothing to say
-    }
-    var finalPhrase = ""
-    
-    for (index, letter) in phrase.enumerated() {
-        if index % 2 == 0 {
-            finalPhrase.append(letter.lowercased())
-        } else {
-            finalPhrase.append(letter.uppercased())
+    private func talkLikeSpongebob(phrase: String) {
+        if phrase.isEmpty {
+            return // exit the function if we have nothing to say
         }
+        var finalPhrase = ""
+        
+        for (index, letter) in phrase.enumerated() {
+            if index % 2 == 0 {
+                finalPhrase.append(letter.lowercased())
+            } else {
+                finalPhrase.append(letter.uppercased())
+            }
+        }
+        
+        print(finalPhrase)
     }
-    
-    print("\"\(phrase)\" - Someone.\n\"\(finalPhrase)\" - Us")
-}
 
-talkLikeSpongebob(phrase: "I don't like this example.")
+    talkLikeSpongebob(phrase: "You can't imitate Spongebob")
+    talkLikeSpongebob(phrase: "")
+
+    print()
+
+    private func shout(message: String) -> String {
+        return message.uppercased()
+    }
+
+    print(shout(message: "I love Swift"))
 
     // MARK: 2.4 The fallthrough Keyword
-    markHeading3(title: "\(HeadingWordings.section) 2.4")
+    // Check out here our switch statement article: https://codelearnhub.com/swift-switch-statement/#22_A_Switch_Statement_Will_Only_Execute_a_Single_Case_by_Default
 
-    // MARK: 2.5 The throws Keyword
+    // MARK: 2.5 The throw Keyword
     markHeading3(title: "\(HeadingWordings.section) 2.5")
+
+    enum DayError: Error {
+        case notAnActualDayError(String)
+    }
+
+    private func sayDay(fromNumber number: Int) throws {
+        switch number {
+        case 1:
+            print("I don't care if Monday's blue.")
+        case 2:
+            print("Tuesday's grey.")
+        case 3:
+            print("And Wednesday too (is grey).")
+        case 4:
+            print("Thursday I don't care about you.")
+        case 5:
+            print("It's Friday, I'm in love!")
+        case 6:
+            print("Saturday wait...")
+        case 7:
+            print("And Sunday always comes too late")
+        default:
+            throw DayError.notAnActualDayError("NotAnActualDayError: There's no day for number \"\(number)\".\n")
+        }
+        
+        print("Song: Friday I'm in Love - The Cure.\n")
+    }
+
+    do {
+        try sayDay(fromNumber: 1)
+        try sayDay(fromNumber: 10)
+    } catch DayError.notAnActualDayError(let message) {
+        print(message)
+    }
+
 
     // MARK: 2.6 The guard Keyword
     markHeading3(title: "\(HeadingWordings.section) 2.6")
+
+    private func jackpot(number: Int) {
+        let eligibleNumbers = -100...100
+        
+        guard eligibleNumbers.contains(number) else {
+            print("Your number must be in the range [-100, 100]")
+            return
+        }
+        
+        let selectedNumber = Int.random(in: -100...100)
+        
+        guard number == selectedNumber else {
+            print("Selected number was \(selectedNumber). Better luck next time!")
+            return
+        }
+        
+        print("Congratulations! You hit the jackpot!")
+    }
+
+    jackpot(number: 200)
+    jackpot(number: 50)
+    jackpot(number: 4)
 
     // MARK: 2.7 Labeled Statements
     markHeading3(title: "\(HeadingWordings.section) 2.7")
