@@ -186,7 +186,7 @@ import Foundation
             return
         }
         
-        let selectedNumber = Int.random(in: -100...100)
+        let selectedNumber = Int.random(in: eligibleNumbers)
         
         guard number == selectedNumber else {
             print("Selected number was \(selectedNumber). Better luck next time!")
@@ -202,3 +202,40 @@ import Foundation
 
     // MARK: 2.7 Labeled Statements
     markHeading3(title: "\(HeadingWordings.section) 2.7")
+
+    struct Participant {
+        let name: String
+        let numbers: [Int]
+    }
+
+    private func groupJackpot(participants: [Participant]) {
+        let eligibleNumbers = -200...200
+        let jackpotNumber = Int.random(in: eligibleNumbers)
+        var winner: Participant?
+        
+        participantLabel: for participant in participants {
+            for number in participant.numbers {
+                if !eligibleNumbers.contains(number) {
+                    continue // skip to next number if the number is outside of range
+                }
+                
+                if number == jackpotNumber {
+                    winner = Participant(name: participant.name, numbers: [number])
+                    break participantLabel // if one participant has the jackpot, exit the outer loop. We have a winner!
+                }
+            }
+        }
+        
+        if let winner = winner, let winningNumber = winner.numbers.first {
+            print("The winner is \(winner.name) with the number \(winningNumber).")
+        } else {
+            print("No winners.")
+        }
+    }
+
+    let dimitris = Participant(name: "Dimitris", numbers: [4, -101, 10, 0, 145, 6])
+    let akis = Participant(name: "Akis", numbers: [77, 13, -20, 3, 9999, 199])
+    let john = Participant(name: "John", numbers: [-187, 89, 340, 9, 162, 81])
+
+    groupJackpot(participants: [dimitris, akis, john])
+    groupJackpot(participants: [dimitris, akis, john])
