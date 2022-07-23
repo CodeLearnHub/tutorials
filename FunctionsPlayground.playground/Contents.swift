@@ -1,17 +1,25 @@
 // MARK: ArticleName
 
 let articleSingleton = Article.shared
-// MARK: - 1. Section1
+
+articleSingleton.nextHeader(ofLevel: .h1, printHeader: false)
+
+// MARK: - 2. The Simplest Function in Swift
 articleSingleton.nextHeader(ofLevel: .h1)
 
-// MARK: - 2. Section2
-articleSingleton.nextHeader(ofLevel: .h1)
+func printMyMessage() {
+    print("My first function!")
+}
 
-    // MARK:  2.1 Subsection21
-
-        // MARK:  2.1.1 Subsection211
-
-            // MARK:  2.1.1.1 Subsection211
+printMyMessage()
 
 // MARK: - 3. Section3
 articleSingleton.nextHeader(ofLevel: .h1)
+
+
+
+// MARK:  2.1 Subsection21
+
+    // MARK:  2.1.1 Subsection211
+
+        // MARK:  2.1.1.1 Subsection211

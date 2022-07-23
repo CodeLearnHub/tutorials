@@ -91,8 +91,11 @@ public class Article {
     private init() {}
 
     // MARK: Only use this!!!
-    public func nextHeader(ofLevel level: Header) {
-        self.printSection(section: self.addHeader(ofLevel: level))
+    public func nextHeader(ofLevel level: Header, printHeader: Bool = true) {
+        let newSection = self.addHeader(ofLevel: level)
+        if printHeader {
+            self.printSection(section: newSection)
+        }
     }
     
     private func addHeader(ofLevel level: Header) -> Section {
