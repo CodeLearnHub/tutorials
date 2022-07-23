@@ -1,11 +1,7 @@
 // MARK: ArticleName
 
-let articleSingleton = Article.shared
-
-articleSingleton.nextHeader(ofLevel: .h1, printHeader: false)
-
 // MARK: - 2. The Simplest Function in Swift
-articleSingleton.nextHeader(ofLevel: .h1)
+markHeading1(numbering: "2")
 
 func printMyMessage() {
     print("My first function!")
@@ -14,8 +10,7 @@ func printMyMessage() {
 printMyMessage()
 
 // MARK: - 3. Section3
-articleSingleton.nextHeader(ofLevel: .h1)
-
+markHeading1(numbering: "3")
 
 
 // MARK:  2.1 Subsection21
