@@ -1,3 +1,5 @@
+import Foundation
+
 // MARK: ArticleName
 
 // MARK: - 2. The Simplest Function in Swift
@@ -78,3 +80,61 @@ markHeading(numbering: "4")
 
 // MARK: - 5. Characteristics of Swift Function Parameters
 markHeading(numbering: "5")
+
+    // MARK: 5.1 Flexible Parameter Names With Argument Labels
+
+    // Changing the parameters' names
+    func sayHi(myNameIs: String, andIAm: Int) {
+        print("Hi! My name is \(myNameIs) and I'm \(andIAm) years old.")
+    }
+
+    //sayHi(myNameIs: "Dimitris", andIAm: 26) // same output as before
+
+    // Using argument labels
+    func hi(myNameIs name: String, andIAm age: Int) {
+        print("Hi! My name is \(name) and I'm \(age) years old.")
+    }
+
+    //sayhi(myNameIs: "Dimitris", andIAm: 26) // same output as before
+
+    // MARK: 5.2 Shorter Function Calls by Omitting Argument Labels
+    markHeading(numbering: "5.2")
+
+    func calculateHypotenuse(_ a: Double, _ b: Double) -> Double {
+        return sqrt(pow(a, 2) + pow(b, 2))
+    }
+
+    print(calculateHypotenuse(6, 8))
+
+
+    // MARK: 5.3 Completely Omit Parameters With Default Values
+    markHeading(numbering: "5.3")
+
+    func randomNumberFromZero(to upperLimit: Int = 100) {
+        if upperLimit < 0 {
+            return
+        }
+        print("Your number is: \(Int.random(in: 0...upperLimit))")
+    }
+
+    randomNumberFromZero(to: 10)
+    randomNumberFromZero()
+
+    // MARK: 5.4 Dynamic Number of Parameters With Variadic Parameters
+    markHeading(numbering: "5.4")
+
+    func multiplyAndEstimate(numbers: Int..., estimation: Int) {
+        let product = numbers.reduce(1, { $0 * $1 })
+        
+        let verdict = product == estimation ? "You were right!" : "You were wrong..."
+        
+        print("The product is \(product). You estimated: \(estimation). \(verdict)")
+    }
+
+    multiplyAndEstimate(numbers: 1, 3, 100, 34, estimation: 1000)
+    multiplyAndEstimate(numbers: 3, 1000, estimation: 3000)
+
+    // MARK: 5.5 Modify the Actual Parameters With In-Out Parameters
+    markHeading(numbering: "5.5")
+
+
