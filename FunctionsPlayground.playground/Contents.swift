@@ -207,5 +207,5 @@ print(salaryChangeOperation(salary, 20))
     print()
     announceSalaryChange(salaryOperation: decreaseSalary, salary: 2000, percentage: 20)
 
-    // MARK: 6.2 Returning a Function Type From Within Other Swift Functionts
+    // MARK: 6.2 Returning a Function Type From Within Other Swift Functions
     markHeading(numbering: "6.2")
