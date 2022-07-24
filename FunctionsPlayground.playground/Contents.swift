@@ -137,4 +137,40 @@ markHeading(numbering: "5")
     // MARK: 5.5 Modify the Actual Parameters With In-Out Parameters
     markHeading(numbering: "5.5")
 
+        // MARK: 5.5.1 Regular Function
+        markHeading(numbering: "5.5.1")
 
+        func regularFuncForRaise(salary: Double) -> Double {
+        //    salary = salary + (salary * 0.1) // Compile-time error: Cannot assign to value: 'salary' is a 'let' constant
+            return salary + (salary * 0.1)
+        }
+
+        let salary1 = 1000.0
+        var salary2 = 2000.0
+
+        let regularSalary1 = regularFuncForRaise(salary: salary1)
+        let regularSalary2 = regularFuncForRaise(salary: salary2)
+        let regularSalary3 = regularFuncForRaise(salary: 3000)
+
+        print("salary1: \(salary1) - salary2: \(salary2) - regularSalary1: \(regularSalary1) - regularSalary2: \(regularSalary2) - regularSalary3: \(regularSalary3)")
+
+        // MARK: 5.5.2 In-Out Function
+        markHeading(numbering: "5.5.2")
+
+        func inOutFuncForRaise(salary: inout Double) {
+            salary = salary + (salary * 0.1)
+        }
+
+        let salaryA = 1000.0
+        var salaryB = 2000.0
+
+        // Uncomment to see the errors
+
+        //inOutFuncForRaise(salary: &salaryA)  // Compile-time error: Cannot pass immutable value as inout argument: 'salaryA' is a 'let' constant
+        inOutFuncForRaise(salary: &salaryB)
+        //inOutFuncForRaise(salary: 3000)      // Compile-time error: Cannot pass immutable value as inout argument: literals are not mutable
+
+        print("salaryA: \(salaryA) - salaryB: \(salaryB)") // salaryB has been modified!!
+
+// MARK: - 6. Using Functions as Types for Other Functions
+markHeading(numbering: "6")
