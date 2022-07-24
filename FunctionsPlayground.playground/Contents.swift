@@ -174,3 +174,22 @@ markHeading(numbering: "5")
 
 // MARK: - 6. Using Functions as Types for Other Functions
 markHeading(numbering: "6")
+
+func increaseSalary(salary: Double, percentage: Double) -> Double {
+    return salary + (salary * (percentage / 100.0))
+}
+
+func decreaseSalary(salary: Double, percentage: Double) -> Double {
+    return salary - (salary * (percentage / 100.0))
+}
+
+let salary = 1500.0
+
+var salaryChangeOperation: (Double, Double) -> Double = increaseSalary
+print(salaryChangeOperation(salary, 50))
+
+salaryChangeOperation = decreaseSalary
+print(salaryChangeOperation(salary, 20))
+
+    // MARK: 6.1 Using a Function Type as a Parameter to Another Function
+    markHeading(numbering: "6.1")
