@@ -209,3 +209,46 @@ print(salaryChangeOperation(salary, 20))
 
     // MARK: 6.2 Returning a Function Type From Within Other Swift Functions
     markHeading(numbering: "6.2")
+
+    func chooseSalaryOperation(toBePromoted: Bool) -> ((Double, Double) -> Double) {
+        return toBePromoted ? increaseSalary : decreaseSalary
+    }
+
+    let promoteOperation = chooseSalaryOperation(toBePromoted: true)
+    let demoteOperation = chooseSalaryOperation(toBePromoted: false)
+
+    print("Your salary increased from 2000 to \(promoteOperation(2000, 13)), by 13%.")
+    print("Your salary decreased from 2000 to \(demoteOperation(2000, 10)), by 10%.")
+
+// MARK: - 7. Define Functions Inside Functions With Nested Swift Functions
+markHeading(numbering: "7")
+
+func statsFor(range: Int...) {
+    func minMax() -> (min: Int?, max: Int?) {
+        return (range.min(), range.max())
+    }
+    
+    func sum() -> Int {
+        return range.reduce(0, { $0 + $1 })
+    }
+    
+    func count() -> Int {
+        return range.count
+    }
+    
+    func mean() -> Int {
+        if range.isEmpty {
+            return 0
+        }
+        return sum() / count()
+    }
+    
+    print("Stats:")
+    print("Minimum Value: \(minMax().min ?? 0)")
+    print("Maximum Value: \(minMax().max ?? 0)")
+    print("Sum: \(sum())")
+    print("Count: \(count())")
+    print("Mean/Average: \(mean())")
+}
+
+statsFor(range: 33, 563, 4, -210, 9, 21, 45, 5, 3, 88, 4, 113, 46, 73, 65, 24, 60, 99)
