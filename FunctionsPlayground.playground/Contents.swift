@@ -1,7 +1,7 @@
 // MARK: ArticleName
 
 // MARK: - 2. The Simplest Function in Swift
-markHeading1(numbering: "2")
+markHeading(numbering: "2")
 
 func printMyMessage() {
     print("My first function!")
@@ -10,7 +10,7 @@ func printMyMessage() {
 printMyMessage()
 
 // MARK: - 3. Functions With One or More Parameters
-markHeading1(numbering: "3")
+markHeading(numbering: "3")
 
 func sayHi(name: String, age: Int) {
     print("Hi! My name is \(name) and I'm \(age) years old.")
