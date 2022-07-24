@@ -191,5 +191,21 @@ print(salaryChangeOperation(salary, 50))
 salaryChangeOperation = decreaseSalary
 print(salaryChangeOperation(salary, 20))
 
-    // MARK: 6.1 Using a Function Type as a Parameter to Another Function
+    // MARK: 6.1 Using a Function Type as a Parameter to Other Swift Functions
     markHeading(numbering: "6.1")
+
+    func announceSalaryChange(salaryOperation: ((Double, Double) -> Double),
+                              salary: Double,
+                              percentage: Double)
+    {
+        let newSalary = salaryOperation(salary, percentage)
+        let modificationString = newSalary < salary ? "decreased" : "increased"
+        print("Your salary of $\(salary) has been \(modificationString) by \(percentage)%.\nYour new salary is $\(newSalary).")
+    }
+
+    announceSalaryChange(salaryOperation: increaseSalary, salary: 2000, percentage: 50)
+    print()
+    announceSalaryChange(salaryOperation: decreaseSalary, salary: 2000, percentage: 20)
+
+    // MARK: 6.2 Returning a Function Type From Within Other Swift Functionts
+    markHeading(numbering: "6.2")
