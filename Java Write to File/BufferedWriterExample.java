@@ -13,6 +13,7 @@ public class BufferedWriterExample {
             writer.write(text);
             System.out.println(text);
             System.out.println( "Content was written successfully!");
+            writer.flush();
             writer.close();
         }
         catch (IOException e) {
