@@ -47,7 +47,7 @@ markHeading(numbering: "4")
     // MARK: 4.1 Raw Values
     markHeading(numbering: "4.1")
 
-    enum PubDay: String {
+    enum PubDay: String, CaseIterable {
         case monday = "Monday: 18:00 - 02:00"
         case tuesday = "Tuesday: 18:00 - 02:00"
         case wednesday = "Wednesday: 18:00 - 02:00"
@@ -105,3 +105,39 @@ markHeading(numbering: "4")
             print("Invalid number for day.")
         }
 
+    // MARK: 4.2 Associated Values
+    markHeading(numbering: "4.2")
+
+    enum WeaponType {
+        case melee(power: Double, durability: Int)
+        case ranged(power: Double, durability: Int, range: Int)
+        case magic(power: Double)
+    }
+
+    func showWeaponAttributes(weapon: WeaponType) {
+        switch weapon {
+        case .melee(let power, let durability):
+            print("Melee weapon: Power = \(power), Durability = \(durability)/100.")
+        case .ranged(let power, let durability, let range):
+            print("Ranged weapon: Power = \(power), Durability = \(durability)/100, Range: \(range) meters.")
+        case .magic(let power):
+            print("Magic weapon: Power = \(power).")
+        }
+    }
+
+    let dagger: WeaponType = .melee(power: 15, durability: 30)
+    let bow: WeaponType = .ranged(power: 10, durability: 20, range: 100)
+    let darkMagic: WeaponType = .magic(power: 50)
+
+    showWeaponAttributes(weapon: dagger)
+    showWeaponAttributes(weapon: bow)
+    showWeaponAttributes(weapon: darkMagic)
+
+    // MARK: 4.3 Iterating Over All Cases of an Enum
+    markHeading(numbering: "4.3")
+
+    print("The pub is open \(PubDay.allCases.count) days a week. The full opening hours are shown below:\n")
+
+    for day in PubDay.allCases {
+        print(day.rawValue)
+    }
