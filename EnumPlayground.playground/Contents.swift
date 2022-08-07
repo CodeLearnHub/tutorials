@@ -1,5 +1,7 @@
 // MARK: Swift Enum
 
+import Foundation
+
 // MARK: - 2. Syntax of a Swift Enum
 markHeading(numbering: "2")
 
@@ -141,3 +143,73 @@ markHeading(numbering: "4")
     for day in PubDay.allCases {
         print(day.rawValue)
     }
+
+    // MARK: 4.4 Miscellaneous Characteristics
+    markHeading(numbering: "4.4")
+
+    enum IceCreamFlavor: String, CaseIterable {
+        case chocolate = "Chocolate"
+        case vanilla = "Vanilla"
+        case banana = "Banana"
+        case strawberry = "Strawberry"
+        
+        var enEspañol: String {
+            switch self {
+                
+            case .chocolate:
+                return "Chocolate"
+            case .vanilla:
+                return "Vainilla"
+            case .banana:
+                return "Plátano"
+            case .strawberry:
+                return "Fresa"
+            }
+        }
+        
+        init() {
+            let randomNumber = Int.random(in: 1...4)
+            
+            switch randomNumber {
+            case 1:
+                self = .chocolate
+            case 2:
+                self = .vanilla
+            case 3:
+                self = .banana
+            default:
+                self = .strawberry
+            }
+        }
+        
+        static func displayMenu() {
+            print("Welcome to our humble ice-cream van!\n")
+            
+            print("Our available ice cream flavors are:")
+            for flavor in IceCreamFlavor.allCases {
+                print(flavor.rawValue)
+            }
+            
+            print("\nPrices:")
+            print("1 scoop = $1\n2 scoops $1.5\n3 scoops $2\n")
+            
+            print("Available in cone or cup.")
+        }
+    }
+
+        // MARK: 4.4.1 Initializers in an Enum
+        markHeading(numbering: "4.4.1")
+
+        let randomFlavor = IceCreamFlavor()
+        print(randomFlavor)
+
+        // MARK: 4.4.2 Computed Properties
+        markHeading(numbering: "4.4.2")
+
+        let strawberryIceCream = IceCreamFlavor.strawberry
+        print(strawberryIceCream.enEspañol)
+
+        // MARK: 4.4.3 Methods
+        markHeading(numbering: "4.4.3")
+
+        IceCreamFlavor.displayMenu()
